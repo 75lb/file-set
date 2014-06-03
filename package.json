@@ -1,7 +1,7 @@
 {
   "name": "file-set",
   "version": "0.0.0",
-  "description": "Expands file patterns, returning matched and unmatched files and directories.",
+  "description": "Expands file patterns, returning the matched and unmatched files and directories.",
   "main": "lib/file-set.js",
   "repository": "https://github.com/75lb/file-set",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "author": "Lloyd Brookes",
   "devDependencies": {
-    "tap": "^0.4.9",
+    "jsdoc-to-markdown": "0.0.1",
     "tape": "^2.13.2"
   },
   "dependencies": {
