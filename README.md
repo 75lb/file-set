@@ -10,6 +10,7 @@ Expands file patterns, returning the matched and unmatched files and directories
 ####Examples
 ```js
 var FileSet = require("file-set");
+
 var fileSet = FileSet([ "these/*.js", "those/*.txt" ]);
 ```
 
