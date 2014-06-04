@@ -9,6 +9,7 @@ Expands file patterns, returning the matched and unmatched files and directories
 
 ####Examples
 ```js
+var FileSet = require("file-set");
 var fileSet = FileSet([ "these/*.js", "those/*.txt" ]);
 ```
 
@@ -16,16 +17,15 @@ var fileSet = FileSet([ "these/*.js", "those/*.txt" ]);
 
 
 
-##class: module:file-set
-A class to stat files, providing globbing support.
+##class: file-set
+
 
 
 - files `string[]` The input files to stat  
 
 ####Examples
 ```js
-<caption>Expanding a list of glob patterns</caption>
-   var fileStats = new FileSet([ "lib/src/*", "test/*"]);
+var fileStats = new FileSet([ "lib/src/*", "test/*"]);
 ```
 
 
