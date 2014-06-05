@@ -4,47 +4,42 @@
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
 
-#file-set API
+#file-set
 Expands file patterns, returning the matched and unmatched files and directories.
 
-####Examples
-```js
+####Example
 var FileSet = require("file-set");
 
 var fileSet = FileSet([ "these/*.js", "those/*.txt" ]);
-```
+
+
+
+**Contents**
+* [list](#module_file-set#list)
+* [files](#module_file-set#files)
+* [dirs](#module_file-set#dirs)
+* [notExisting](#module_file-set#notExisting)
+* [add(files)](#module_file-set#add)
 
 
 
 
-
-##class: file-set
-
-
-
-- files `string[]` The input files to stat  
-
-####Examples
-```js
-var fileStats = new FileSet([ "lib/src/*", "test/*"]);
-```
-
-
-
-
-
+<a name="module_file-set#list"></a>
 ###fileSet.list
 A list of unique paths, all which exist
 
 
+<a name="module_file-set#files"></a>
 ###fileSet.files
 List of files which exist
 
 
+<a name="module_file-set#dirs"></a>
 ###fileSet.dirs
 List of dirs which exist
 
 
+<a name="module_file-set#notExisting"></a>
 ###fileSet.notExisting
 Paths which do not exist
 
@@ -52,11 +47,13 @@ Paths which do not exist
 
 
 
+<a name="module_file-set#add"></a>
 ###fileSet.add(files)
 add files to the set
 
 
 - files `string | Array.<string>` the files to add  
+
 
 
 
