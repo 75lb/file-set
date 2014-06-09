@@ -5,14 +5,8 @@
 
 
 #file-set
-Expands file patterns, returning the matched and unmatched files and directories.
 
-####Example
-```js
-var FileSet = require("file-set");
 
-var fileSet = FileSet([ "these/*.js", "those/*.txt" ]);
-```
 
 
 
@@ -50,7 +44,7 @@ Paths which do not exist
 
 
 <a name="module_file-set#add"></a>
-###fileSet.add(files)
+###add(files)
 add files to the set
 
 

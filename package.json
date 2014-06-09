@@ -14,7 +14,7 @@
     "tape": "^2.13.2"
   },
   "dependencies": {
-    "glob": "^4.0.2",
-    "wodge": "^0.8.0"
+    "array-ting": "^1.0.4",
+    "glob": "^4.0.2"
   }
 }
