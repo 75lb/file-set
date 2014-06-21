@@ -6,11 +6,11 @@
   "repository": "https://github.com/75lb/file-set",
   "scripts": {
     "test": "tape test/*.js",
-    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/file-set.js > README.md; echo "
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/file-set.js --index > README.md; echo "
   },
   "author": "Lloyd Brookes",
   "devDependencies": {
-    "jsdoc-to-markdown": "^0.1",
+    "jsdoc-to-markdown": "^0.2",
     "tape": "^2.13.2"
   },
   "dependencies": {

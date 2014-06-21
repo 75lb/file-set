@@ -3,62 +3,52 @@
 [![Build Status](https://travis-ci.org/75lb/file-set.svg?branch=master)](https://travis-ci.org/75lb/file-set)
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
-
+<a name="module_file-set"></a>
 #file-set
+Expands file patterns, returning the matched and unmatched files and directories. 
+Pass a list of file patterns to expand
 
 
+- files `Array.<string>` - The input files to stat
 
+  
+####Example
+```js
+var fileSet = require("file-set");
 
-
+var thoseFiles = fileSet([ "these/*.js", "those/*.txt" ]);
+```
 **Contents**
-* [list](#module_file-set#list)
-* [files](#module_file-set#files)
-* [dirs](#module_file-set#dirs)
-* [notExisting](#module_file-set#notExisting)
-* [add(files)](#module_file-set#add)
+* [Class: FileSet](#module_file-set.FileSet)
 
+<a name="module_file-set.FileSet"></a>
 
-
-
-<a name="module_file-set#list"></a>
+##class: FileSet
+**Scope**: inner class of [file-set](#module_file-set)  
+<a name="module_file-set.FileSet#list"></a>
 ###fileSet.list
 A list of unique paths, all which exist
 
-
-<a name="module_file-set#files"></a>
+**Type**: `Array.<string>`  
+<a name="module_file-set.FileSet#files"></a>
 ###fileSet.files
 List of files which exist
 
-
-<a name="module_file-set#dirs"></a>
+**Type**: `Array.<string>`  
+<a name="module_file-set.FileSet#dirs"></a>
 ###fileSet.dirs
 List of dirs which exist
 
-
-<a name="module_file-set#notExisting"></a>
+**Type**: `Array.<string>`  
+<a name="module_file-set.FileSet#notExisting"></a>
 ###fileSet.notExisting
 Paths which do not exist
 
-
-
-
-
-<a name="module_file-set#add"></a>
-###add(files)
+**Type**: `Array.<string>`  
+<a name="module_file-set.FileSet#add"></a>
+###fileSet.add(files)
 add files to the set
 
 
-- files `string | Array.<string>` the files to add  
-
-
-
-
-
-
-
-
-
-
-
-
+- files `string | Array.<string>` - the files to add
 
