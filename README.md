@@ -5,13 +5,13 @@
 
 <a name="module_file-set"></a>
 #file-set
-Expands file patterns, returning the matched and unmatched files and directories. 
-Pass a list of file patterns to expand
+Exports a single function which expands file patterns, returning an object containing the input files split into separate lists.
 
 
-- files `Array.<string>` - The input files to stat
+- files `Array.<string>` - The input file patterns to expand
 
   
+**Returns**: `object`  
 ####Example
 ```js
 var fileSet = require("file-set");
