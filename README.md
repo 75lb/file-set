@@ -25,18 +25,6 @@ var thoseFiles = fileSet([ "these/*.js", "those/*.txt" ]);
 
 ##class: FileSet
 **Scope**: inner class of [file-set](#module_file-set)  
-<a name="module_file-set.FileSet.NOEXIST"></a>
-###fileSet.NOEXIST
-**Default**: `0`  
-**Type**: `number`  
-<a name="module_file-set.FileSet.FILE"></a>
-###fileSet.FILE
-**Default**: `1`  
-**Type**: `number`  
-<a name="module_file-set.FileSet.DIR"></a>
-###fileSet.DIR
-**Default**: `2`  
-**Type**: `number`  
 <a name="module_file-set.FileSet#list"></a>
 ###fileSet.list
 A list of unique paths, all which exist
@@ -64,3 +52,15 @@ add files to the set
 
 - files `string | Array.<string>` - the files to add
 
+<a name="module_file-set.FileSet.NOEXIST"></a>
+###fileSet.NOEXIST
+**Default**: `0`  
+**Type**: `number`  
+<a name="module_file-set.FileSet.FILE"></a>
+###fileSet.FILE
+**Default**: `1`  
+**Type**: `number`  
+<a name="module_file-set.FileSet.DIR"></a>
+###fileSet.DIR
+**Default**: `2`  
+**Type**: `number`  
