@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
 <a name="module_file-set"></a>
-#file-set
+#file-set(files)
 Exports a single function which expands file patterns, returning an object containing the input files split into separate lists.
 
 
