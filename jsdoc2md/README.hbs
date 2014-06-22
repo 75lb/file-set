@@ -10,4 +10,26 @@ Exports a single contructor taking a list of file patterns as input, returning a
 ```sh
 $ npm install file-set --save
 ```
+
+##Usage
+```js
+> var fileSet = require("file-set");
+> var ls = fileSet([ "*", "not/existing/*" ])
+{ list:
+   [ { path: 'README.md', type: 1 },
+     { path: 'jsdoc2md', type: 2 },
+     { path: 'lib', type: 2 },
+     { path: 'node_modules', type: 2 },
+     { path: 'package.json', type: 1 },
+     { path: 'test', type: 2 },
+     { path: 'not/existing/*', type: 0 } ],
+  files: [ 'README.md', 'package.json' ],
+  dirs:
+   [ 'jsdoc2md',
+     'lib',
+     'node_modules',
+     'test' ],
+  notExisting: [ 'not/existing/*' ] }
+```
+
 {{>docs}}

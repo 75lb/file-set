@@ -10,16 +10,11 @@ Exports a single contructor taking a list of file patterns as input, returning a
 ```sh
 $ npm install file-set --save
 ```
-<a name="module_file-set"></a>
-##file-set(patternList)
 
-- patternList `string | Array.<string>` - A pattern, or array of patterns to expand
-
-  
-####Example
+##Usage
 ```js
 > var fileSet = require("file-set");
-> ls = fileSet([ "*", "not/existing/*" ])
+> var ls = fileSet([ "*", "not/existing/*" ])
 { list:
    [ { path: 'README.md', type: 1 },
      { path: 'jsdoc2md', type: 2 },
@@ -36,6 +31,13 @@ $ npm install file-set --save
      'test' ],
   notExisting: [ 'not/existing/*' ] }
 ```
+
+<a name="module_file-set"></a>
+##file-set(patternList)
+
+- patternList `string | Array.<string>` - A pattern, or array of patterns to expand
+
+  
 **Contents**
 * [list](#module_file-set#list)
 * [files](#module_file-set#files)
