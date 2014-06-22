@@ -14,24 +14,21 @@ Exports a single contructor taking a list of file patterns as input, returning a
 ####Example
 ```js
 > var fileSet = require("file-set");
+> ls = fileSet([ "*", "not/existing/*" ])
 { list:
    [ { path: 'README.md', type: 1 },
      { path: 'jsdoc2md', type: 2 },
      { path: 'lib', type: 2 },
      { path: 'node_modules', type: 2 },
-     { path: 'out', type: 2 },
      { path: 'package.json', type: 1 },
      { path: 'test', type: 2 },
-     { path: 'tmp', type: 2 },
      { path: 'not/existing/*', type: 0 } ],
   files: [ 'README.md', 'package.json' ],
   dirs:
    [ 'jsdoc2md',
      'lib',
      'node_modules',
-     'out',
-     'test',
-     'tmp' ],
+     'test' ],
   notExisting: [ 'not/existing/*' ] }
 ```
 **Contents**
@@ -41,15 +38,6 @@ Exports a single contructor taking a list of file patterns as input, returning a
 * [notExisting](#module_file-set#notExisting)
 * [add(files)](#module_file-set#add)
 
-<a name="module_file-set.NOEXIST"></a>
-
-##class: NOEXIST
-<a name="module_file-set.FILE"></a>
-
-##class: FILE
-<a name="module_file-set.DIR"></a>
-
-##class: DIR
 <a name="module_file-set#list"></a>
 ###fileSet.list
 The full list of unique paths found, and not found.
@@ -77,3 +65,15 @@ add file patterns to the set
 
 - files `string | Array.<string>` - A pattern, or array of patterns to expand
 
+<a name="module_file-set.NOEXIST"></a>
+###file-set.NOEXIST
+**Default**: `0`  
+**Type**: `number`  
+<a name="module_file-set.FILE"></a>
+###file-set.FILE
+**Default**: `1`  
+**Type**: `number`  
+<a name="module_file-set.DIR"></a>
+###file-set.DIR
+**Default**: `2`  
+**Type**: `number`  
