@@ -11,7 +11,7 @@ Exports a single contructor taking a list of file patterns as input, returning a
 $ npm install file-set --save
 ```
 <a name="module_file-set"></a>
-#file-set(patternList)
+##file-set(patternList)
 
 - patternList `string | Array.<string>` - A pattern, or array of patterns to expand
 
