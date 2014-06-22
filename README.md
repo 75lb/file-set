@@ -43,6 +43,7 @@ $ npm install file-set --save
 * [files](#module_file-set#files)
 * [dirs](#module_file-set#dirs)
 * [notExisting](#module_file-set#notExisting)
+* [eFileType](#module_file-set.eFileType)
 * [add(files)](#module_file-set#add)
 
 <a name="module_file-set#list"></a>
@@ -72,16 +73,10 @@ add file patterns to the set
 
 - files `string | Array.<string>` - A pattern, or array of patterns to expand
 
-<a name="module_file-set.NOEXIST"></a>
-###file-set.NOEXIST
-**Default**: `0`  
-**Type**: `number`  
-<a name="module_file-set.FILE"></a>
-###file-set.FILE
-**Default**: `1`  
-**Type**: `number`  
-<a name="module_file-set.DIR"></a>
-###file-set.DIR
-**Default**: `2`  
+<a name="module_file-set.eFileType"></a>
+###fileSet.eFileType
+Enum for fileSet.list item types
+
+**Read only**: true  
 **Type**: `number`  
 
