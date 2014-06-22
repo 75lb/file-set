@@ -14,7 +14,6 @@ Exports a single contructor taking a list of file patterns as input, returning a
 ####Example
 ```js
 > var fileSet = require("file-set");
-> var ls = fileSet("*")
 { list:
    [ { path: 'README.md', type: 1 },
      { path: 'jsdoc2md', type: 2 },
@@ -23,7 +22,8 @@ Exports a single contructor taking a list of file patterns as input, returning a
      { path: 'out', type: 2 },
      { path: 'package.json', type: 1 },
      { path: 'test', type: 2 },
-     { path: 'tmp', type: 2 } ],
+     { path: 'tmp', type: 2 },
+     { path: 'not/existing/*', type: 0 } ],
   files: [ 'README.md', 'package.json' ],
   dirs:
    [ 'jsdoc2md',
@@ -32,7 +32,7 @@ Exports a single contructor taking a list of file patterns as input, returning a
      'out',
      'test',
      'tmp' ],
-  notExisting: [] }
+  notExisting: [ 'not/existing/*' ] }
 ```
 **Contents**
 * [list](#module_file-set#list)
@@ -41,24 +41,33 @@ Exports a single contructor taking a list of file patterns as input, returning a
 * [notExisting](#module_file-set#notExisting)
 * [add(files)](#module_file-set#add)
 
+<a name="module_file-set.NOEXIST"></a>
+
+##class: NOEXIST
+<a name="module_file-set.FILE"></a>
+
+##class: FILE
+<a name="module_file-set.DIR"></a>
+
+##class: DIR
 <a name="module_file-set#list"></a>
 ###fileSet.list
-A list of unique paths, all which exist
+The full list of unique paths found, and not found.
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#files"></a>
 ###fileSet.files
-List of files which exist
+The existing files found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#dirs"></a>
 ###fileSet.dirs
-List of dirs which exist
+The existing directories found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#notExisting"></a>
 ###fileSet.notExisting
-Paths which do not exist
+Paths which were not found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
