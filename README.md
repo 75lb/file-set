@@ -38,6 +38,10 @@ $ npm install file-set --save
 - patternList `string | Array.<string>` - A pattern, or array of patterns to expand
 
   
+####Example
+```js
+var fileSet = require("file-set");
+```
 **Contents**
 * [list](#module_file-set#list)
 * [files](#module_file-set#files)
