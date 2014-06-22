@@ -5,16 +5,35 @@
 
 <a name="module_file-set"></a>
 #file-set(files)
-Exports a single function which expands file patterns, returning an object containing the input files split into separate lists.
+Exports a single contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
 
 
 - files `Array.<string>` - The input file patterns to expand
 
   
-**Returns**: `object`  
 ####Example
 ```js
-var thoseFiles = fileSet([ "these/*.js", "those/*.txt" ]);
+> var fileSet = require("file-set");
+{ [Function: FileSet] NOEXIST: 0, FILE: 1, DIR: 2 }
+> var ls = fileSet("*")
+{ list:
+   [ { path: 'README.md', type: 1 },
+     { path: 'jsdoc2md', type: 2 },
+     { path: 'lib', type: 2 },
+     { path: 'node_modules', type: 2 },
+     { path: 'out', type: 2 },
+     { path: 'package.json', type: 1 },
+     { path: 'test', type: 2 },
+     { path: 'tmp', type: 2 } ],
+  files: [ 'README.md', 'package.json' ],
+  dirs:
+   [ 'jsdoc2md',
+     'lib',
+     'node_modules',
+     'out',
+     'test',
+     'tmp' ],
+  notExisting: [] }
 ```
 **Contents**
 * [list](#module_file-set#list)
