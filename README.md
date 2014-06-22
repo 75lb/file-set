@@ -4,17 +4,16 @@
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
 <a name="module_file-set"></a>
-#file-set(files)
+#file-set(patternList)
 Exports a single contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
 
 
-- files `Array.<string>` - The input file patterns to expand
+- patternList `string | Array.<string>` - A pattern, or array of patterns to expand
 
   
 ####Example
 ```js
 > var fileSet = require("file-set");
-{ [Function: FileSet] NOEXIST: 0, FILE: 1, DIR: 2 }
 > var ls = fileSet("*")
 { list:
    [ { path: 'README.md', type: 1 },
@@ -64,8 +63,8 @@ Paths which do not exist
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
 ###fileSet.add(files)
-add files to the set
+add file patterns to the set
 
 
-- files `string | Array.<string>` - the files to add
+- files `string | Array.<string>` - A pattern, or array of patterns to expand
 
