@@ -75,7 +75,7 @@ add file patterns to the set
 
 <a name="module_file-set.eFileType"></a>
 ###fileSet.eFileType
-Enum for fileSet.list item types
+Enum for the `type` value of each record in `fileSet.list`
 
 **Enum** with properties: `NOEXIST`, `FILE`, `DIR`  
 **Read only**: true  
