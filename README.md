@@ -6,6 +6,11 @@
 <a name="module_file-set"></a>
 #file-set(patternList)
 Exports a single contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
+    
+##Install 
+```sh
+$ npm install file-set --save
+```
 
 
 - patternList `string | Array.<string>` - A pattern, or array of patterns to expand
