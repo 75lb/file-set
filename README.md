@@ -14,53 +14,39 @@ Exports a single function which expands file patterns, returning an object conta
 **Returns**: `object`  
 ####Example
 ```js
-var fileSet = require("file-set");
-
 var thoseFiles = fileSet([ "these/*.js", "those/*.txt" ]);
 ```
 **Contents**
-* [Class: FileSet](#module_file-set.FileSet)
+* [list](#module_file-set#list)
+* [files](#module_file-set#files)
+* [dirs](#module_file-set#dirs)
+* [notExisting](#module_file-set#notExisting)
+* [add(files)](#module_file-set#add)
 
-<a name="module_file-set.FileSet"></a>
-
-##class: FileSet
-**Scope**: inner class of [file-set](#module_file-set)  
-<a name="module_file-set.FileSet#list"></a>
+<a name="module_file-set#list"></a>
 ###fileSet.list
 A list of unique paths, all which exist
 
 **Type**: `Array.<string>`  
-<a name="module_file-set.FileSet#files"></a>
+<a name="module_file-set#files"></a>
 ###fileSet.files
 List of files which exist
 
 **Type**: `Array.<string>`  
-<a name="module_file-set.FileSet#dirs"></a>
+<a name="module_file-set#dirs"></a>
 ###fileSet.dirs
 List of dirs which exist
 
 **Type**: `Array.<string>`  
-<a name="module_file-set.FileSet#notExisting"></a>
+<a name="module_file-set#notExisting"></a>
 ###fileSet.notExisting
 Paths which do not exist
 
 **Type**: `Array.<string>`  
-<a name="module_file-set.FileSet#add"></a>
+<a name="module_file-set#add"></a>
 ###fileSet.add(files)
 add files to the set
 
 
 - files `string | Array.<string>` - the files to add
 
-<a name="module_file-set.FileSet.NOEXIST"></a>
-###fileSet.NOEXIST
-**Default**: `0`  
-**Type**: `number`  
-<a name="module_file-set.FileSet.FILE"></a>
-###fileSet.FILE
-**Default**: `1`  
-**Type**: `number`  
-<a name="module_file-set.FileSet.DIR"></a>
-###fileSet.DIR
-**Default**: `2`  
-**Type**: `number`  
