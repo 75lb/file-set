@@ -3,10 +3,16 @@
 [![Build Status](https://travis-ci.org/75lb/file-set.svg?branch=master)](https://travis-ci.org/75lb/file-set)
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
-<a name="module_file-set"></a>
-#file-set(patternList)
+#file-set
 Exports a single contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
 
+##Install
+```sh
+$ npm install file-set --save
+```
+
+<a name="module_file-set"></a>
+#file-set(patternList)
 
 - patternList `string | Array.<string>` - A pattern, or array of patterns to expand
 
@@ -78,7 +84,3 @@ add file patterns to the set
 **Default**: `2`  
 **Type**: `number`  
 
-##Install 
-```sh
-$ npm install file-set --save
-```
