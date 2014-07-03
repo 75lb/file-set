@@ -43,8 +43,17 @@ $ npm install file-set --save
 * [fileSet.add(files)](#module_file-set#add)
 * [enum: fileSet.eFileType](#module_file-set.eFileType)
 
-<a name=""></a>
-##
+<a name="module_file-set"></a>
+##new module:file-set(patternList)
+**Params**
+
+- patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
+
+**Example**  
+```js
+var fileSet = require("file-set");
+```
+
 <a name="module_file-set#list"></a>
 ###fileSet.list
 The full list of unique paths found, and not found.
