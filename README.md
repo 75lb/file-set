@@ -34,14 +34,7 @@ $ npm install file-set --save
 
 <a name="module_file-set"></a>
 ##file-set
-**Symbols**
-
-* [fileSet.list](#module_file-set#list)
-* [fileSet.files](#module_file-set#files)
-* [fileSet.dirs](#module_file-set#dirs)
-* [fileSet.notExisting](#module_file-set#notExisting)
-* [fileSet.add(files)](#module_file-set#add)
-* [enum: fileSet.eFileType](#module_file-set.eFileType)
+Expands a list of file patterns
 
 <a name="module_file-set"></a>
 ##new module:file-set(patternList)
@@ -53,6 +46,15 @@ $ npm install file-set --save
 ```js
 var fileSet = require("file-set");
 ```
+
+**Symbols**
+
+* [fileSet.list](#module_file-set#list)
+* [fileSet.files](#module_file-set#files)
+* [fileSet.dirs](#module_file-set#dirs)
+* [fileSet.notExisting](#module_file-set#notExisting)
+* [fileSet.add(files)](#module_file-set#add)
+* [enum: fileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set#list"></a>
 ###fileSet.list
