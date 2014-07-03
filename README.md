@@ -33,23 +33,18 @@ $ npm install file-set --save
 ```
 
 <a name="module_file-set"></a>
-##file-set(patternList)
+##file-set
+**Symbols**
 
-- patternList `string | Array.<string>` - A pattern, or array of patterns to expand
+* [fileSet.list](#module_file-set#list)
+* [fileSet.files](#module_file-set#files)
+* [fileSet.dirs](#module_file-set#dirs)
+* [fileSet.notExisting](#module_file-set#notExisting)
+* [fileSet.add(files)](#module_file-set#add)
+* [enum: fileSet.eFileType](#module_file-set.eFileType)
 
-  
-####Example
-```js
-var fileSet = require("file-set");
-```
-**Contents**
-* [list](#module_file-set#list)
-* [files](#module_file-set#files)
-* [dirs](#module_file-set#dirs)
-* [notExisting](#module_file-set#notExisting)
-* [eFileType](#module_file-set.eFileType)
-* [add(files)](#module_file-set#add)
-
+<a name=""></a>
+##
 <a name="module_file-set#list"></a>
 ###fileSet.list
 The full list of unique paths found, and not found.
@@ -74,14 +69,27 @@ Paths which were not found
 ###fileSet.add(files)
 add file patterns to the set
 
+**Params**
 
-- files `string | Array.<string>` - A pattern, or array of patterns to expand
+- files `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set.eFileType"></a>
-###fileSet.eFileType
+###enum: fileSet.eFileType
 Enum for the `type` value of each record in `fileSet.list`
 
-**Enum** with properties: `NOEXIST`, `FILE`, `DIR`  
-**Read only**: true  
 **Type**: `number`  
+<a name="module_file-set.eFileType.NOEXIST"></a>
+####eFileType.NOEXIST
+**Type**: `number`  
+**Default**: `0`  
+<a name="module_file-set.eFileType.FILE"></a>
+####eFileType.FILE
+**Type**: `number`  
+**Default**: `1`  
+<a name="module_file-set.eFileType.DIR"></a>
+####eFileType.DIR
+**Type**: `number`  
+**Default**: `2`  
+**Properties**: `NOEXIST`, `FILE`, `DIR`  
+**Read only**: true  
 
