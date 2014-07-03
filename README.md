@@ -34,18 +34,18 @@ $ npm install file-set --save
 
 <a name="module_file-set"></a>
 ##file-set
-Expands a list of file patterns
-
-<a name="module_file-set"></a>
-##new module:file-set(patternList)
-**Params**
-
-- patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
-
 **Example**  
 ```js
 var fileSet = require("file-set");
 ```
+
+<a name="module_file-set"></a>
+##new module:file-set(patternList)
+Expands a list of file patterns
+
+**Params**
+
+- patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 **Symbols**
 
