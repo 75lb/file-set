@@ -87,18 +87,6 @@ add file patterns to the set
 Enum for the `type` value of each record in `fileSet.list`
 
 **Type**: `number`  
-<a name="module_file-set.eFileType.NOEXIST"></a>
-####eFileType.NOEXIST
-**Type**: `number`  
-**Default**: `0`  
-<a name="module_file-set.eFileType.FILE"></a>
-####eFileType.FILE
-**Type**: `number`  
-**Default**: `1`  
-<a name="module_file-set.eFileType.DIR"></a>
-####eFileType.DIR
-**Type**: `number`  
-**Default**: `2`  
 **Properties**: `NOEXIST`, `FILE`, `DIR`  
 **Read only**: true  
 
