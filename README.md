@@ -34,6 +34,8 @@ $ npm install file-set --save
 
 <a name="module_file-set"></a>
 ##file-set
+Expands file patterns, returning the matched and unmatched files and directories
+
 **Example**  
 ```js
 var fileSet = require("file-set");
@@ -50,7 +52,7 @@ var fileSet = require("file-set");
 
 <a name="module_file-set"></a>
 ##new FileSet(patternList)
-Expands a list of file patterns
+Expands file patterns, returning the matched and unmatched files and directories
 
 **Params**
 
