@@ -41,15 +41,15 @@ var fileSet = require("file-set");
 
 **Symbols**
 
-* [file-set.list](#module_file-set#list)
-* [file-set.files](#module_file-set#files)
-* [file-set.dirs](#module_file-set#dirs)
-* [file-set.notExisting](#module_file-set#notExisting)
-* [file-set.add(files)](#module_file-set#add)
-* [enum: file-set.eFileType](#module_file-set.eFileType)
+* [fileSet.list](#module_file-set#list)
+* [fileSet.files](#module_file-set#files)
+* [fileSet.dirs](#module_file-set#dirs)
+* [fileSet.notExisting](#module_file-set#notExisting)
+* [fileSet.fileSet(files)](#module_file-set#add)
+* [enum: FileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
-##new module:file-set(patternList)
+##new (patternList)
 Expands a list of file patterns
 
 **Params**
@@ -57,27 +57,27 @@ Expands a list of file patterns
 - patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set#list"></a>
-###file-set.list
+###fileSet.list
 The full list of unique paths found, and not found.
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#files"></a>
-###file-set.files
+###fileSet.files
 The existing files found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#dirs"></a>
-###file-set.dirs
+###fileSet.dirs
 The existing directories found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#notExisting"></a>
-###file-set.notExisting
+###fileSet.notExisting
 Paths which were not found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
-###file-set.add(files)
+###fileSet.fileSet(files)
 add file patterns to the set
 
 **Params**
@@ -85,7 +85,7 @@ add file patterns to the set
 - files `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set.eFileType"></a>
-###enum: file-set.eFileType
+###enum: FileSet.eFileType
 Enum for the `type` value of each record in `fileSet.list`
 
 **Type**: `number`  
