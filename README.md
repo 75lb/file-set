@@ -42,6 +42,7 @@ $ npm install file-set --save
 #API
 **Symbols**
 
+  * [new FileSet(patternList) <sub>exported</sub>](#module_file-set)
 * [fileSet.list](#module_file-set#list)
 * [fileSet.files](#module_file-set#files)
 * [fileSet.dirs](#module_file-set#dirs)
