@@ -49,7 +49,7 @@ var fileSet = require("file-set");
 * [enum: fileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
-##new .module:file-set(patternList)
+##new module:file-set(patternList)
 Expands a list of file patterns
 
 **Params**
