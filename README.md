@@ -6,6 +6,13 @@
 #file-set
 Exports a contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
 
+**Example**  
+```js
+var fileSet = require("file-set");
+```
+
+
+
 ##Install
 ```sh
 $ npm install file-set --save
@@ -32,15 +39,7 @@ $ npm install file-set --save
   notExisting: [ 'not/existing/*' ] }
 ```
 
-<a name="module_file-set"></a>
-##file-set
-Expands file patterns, returning the matched and unmatched files and directories
-
-**Example**  
-```js
-var fileSet = require("file-set");
-```
-
+#API
 **Symbols**
 
 * [fileSet.list](#module_file-set#list)
@@ -51,7 +50,7 @@ var fileSet = require("file-set");
 * [enum: FileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
-##new FileSet(patternList)
+#new FileSet(patternList) <sub>exported</sub>
 Expands file patterns, returning the matched and unmatched files and directories
 
 **Params**
@@ -59,27 +58,27 @@ Expands file patterns, returning the matched and unmatched files and directories
 - patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set#list"></a>
-###fileSet.list
+##fileSet.list
 The full list of unique paths found, and not found.
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#files"></a>
-###fileSet.files
+##fileSet.files
 The existing files found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#dirs"></a>
-###fileSet.dirs
+##fileSet.dirs
 The existing directories found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#notExisting"></a>
-###fileSet.notExisting
+##fileSet.notExisting
 Paths which were not found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
-###fileSet.add(files)
+##fileSet.add(files)
 add file patterns to the set
 
 **Params**
@@ -87,10 +86,9 @@ add file patterns to the set
 - files `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set.eFileType"></a>
-###enum: FileSet.eFileType
+##enum: FileSet.eFileType
 Enum for the `type` value of each record in `fileSet.list`
 
 **Type**: `number`  
 **Properties**: `NOEXIST`, `FILE`, `DIR`  
 **Read only**: true  
-
