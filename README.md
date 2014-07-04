@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
 #file-set
-Exports a single contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
+Exports a contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
 
 ##Install
 ```sh
@@ -41,12 +41,12 @@ var fileSet = require("file-set");
 
 **Symbols**
 
-* [fileSet.list](#module_file-set#list)
-* [fileSet.files](#module_file-set#files)
-* [fileSet.dirs](#module_file-set#dirs)
-* [fileSet.notExisting](#module_file-set#notExisting)
-* [fileSet.add(files)](#module_file-set#add)
-* [enum: fileSet.eFileType](#module_file-set.eFileType)
+* [file-set.list](#module_file-set#list)
+* [file-set.files](#module_file-set#files)
+* [file-set.dirs](#module_file-set#dirs)
+* [file-set.notExisting](#module_file-set#notExisting)
+* [file-set.add(files)](#module_file-set#add)
+* [enum: file-set.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
 ##new module:file-set(patternList)
@@ -57,27 +57,27 @@ Expands a list of file patterns
 - patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set#list"></a>
-###fileSet.list
+###file-set.list
 The full list of unique paths found, and not found.
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#files"></a>
-###fileSet.files
+###file-set.files
 The existing files found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#dirs"></a>
-###fileSet.dirs
+###file-set.dirs
 The existing directories found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#notExisting"></a>
-###fileSet.notExisting
+###file-set.notExisting
 Paths which were not found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
-###fileSet.add(files)
+###file-set.add(files)
 add file patterns to the set
 
 **Params**
@@ -85,7 +85,7 @@ add file patterns to the set
 - files `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set.eFileType"></a>
-###enum: fileSet.eFileType
+###enum: file-set.eFileType
 Enum for the `type` value of each record in `fileSet.list`
 
 **Type**: `number`  
