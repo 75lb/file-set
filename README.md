@@ -45,11 +45,11 @@ var fileSet = require("file-set");
 * [fileSet.files](#module_file-set#files)
 * [fileSet.dirs](#module_file-set#dirs)
 * [fileSet.notExisting](#module_file-set#notExisting)
-* [fileSet.fileSet(files)](#module_file-set#add)
+* [fileSet.add(files)](#module_file-set#add)
 * [enum: FileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
-##new (patternList)
+##new FileSet(patternList)
 Expands a list of file patterns
 
 **Params**
@@ -77,7 +77,7 @@ Paths which were not found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
-###fileSet.fileSet(files)
+###fileSet.add(files)
 add file patterns to the set
 
 **Params**
