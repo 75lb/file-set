@@ -40,9 +40,13 @@ $ npm install file-set --save
 ```
 
 #API
-**Symbols**
+<a name="module_file-set"></a>
+#class: FileSet ⏏
+Expands file patterns, returning the matched and unmatched files and directories
 
-  * [new FileSet(patternList) <sub>exported</sub>](#module_file-set)
+**Members**
+
+* [new FileSet(patternList)](#module_file-set)
 * [fileSet.list](#module_file-set#list)
 * [fileSet.files](#module_file-set#files)
 * [fileSet.dirs](#module_file-set#dirs)
@@ -51,9 +55,7 @@ $ npm install file-set --save
 * [enum: FileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
-#new FileSet(patternList) <sub>exported</sub>
-Expands file patterns, returning the matched and unmatched files and directories
-
+#new FileSet(patternList)
 **Params**
 
 - patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
