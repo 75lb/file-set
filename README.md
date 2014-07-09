@@ -41,7 +41,7 @@ $ npm install file-set --save
 
 #API
 <a name="module_file-set"></a>
-#class: FileSet ⏏
+##class: FileSet ⏏
 Expands file patterns, returning the matched and unmatched files and directories
 
 **Members**
@@ -55,33 +55,33 @@ Expands file patterns, returning the matched and unmatched files and directories
 * [enum: FileSet.eFileType](#module_file-set.eFileType)
 
 <a name="module_file-set"></a>
-#new FileSet(patternList)
+###new FileSet(patternList)
 **Params**
 
 - patternList `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set#list"></a>
-##fileSet.list
+###fileSet.list
 The full list of unique paths found, and not found.
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#files"></a>
-##fileSet.files
+###fileSet.files
 The existing files found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#dirs"></a>
-##fileSet.dirs
+###fileSet.dirs
 The existing directories found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#notExisting"></a>
-##fileSet.notExisting
+###fileSet.notExisting
 Paths which were not found
 
 **Type**: `Array.<string>`  
 <a name="module_file-set#add"></a>
-##fileSet.add(files)
+###fileSet.add(files)
 add file patterns to the set
 
 **Params**
@@ -89,7 +89,7 @@ add file patterns to the set
 - files `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
 <a name="module_file-set.eFileType"></a>
-##enum: FileSet.eFileType
+###enum: FileSet.eFileType
 Enum for the `type` value of each record in `fileSet.list`
 
 **Type**: `number`  
