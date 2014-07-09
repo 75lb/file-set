@@ -95,3 +95,5 @@ Enum for the `type` value of each record in `fileSet.list`
 **Type**: `number`  
 **Properties**: `NOEXIST`, `FILE`, `DIR`  
 **Read only**: true  
+
+*documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
