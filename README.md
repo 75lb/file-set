@@ -80,6 +80,13 @@ The existing directories found
 Paths which were not found
 
 **Type**: `Array.<string>`  
+<a name="module_file-set.eFileType"></a>
+###enum: FileSet.eFileType
+Enum for the `type` value of each record in `fileSet.list`
+
+**Type**: `number`  
+**Properties**: `NOEXIST`, `FILE`, `DIR`  
+**Read only**: true  
 <a name="module_file-set#add"></a>
 ###fileSet.add(files)
 add file patterns to the set
@@ -88,12 +95,6 @@ add file patterns to the set
 
 - files `string` | `Array.<string>` - A pattern, or array of patterns to expand
 
-<a name="module_file-set.eFileType"></a>
-###enum: FileSet.eFileType
-Enum for the `type` value of each record in `fileSet.list`
 
-**Type**: `number`  
-**Properties**: `NOEXIST`, `FILE`, `DIR`  
-**Read only**: true  
 
 *documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*

@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
 
 #file-set
-{{>specific-module-body name="file-set"}}
+{{#module name="file-set"}}{{>body}}{{/module}}
 
 ##Install
 ```sh
@@ -33,5 +33,6 @@ $ npm install file-set --save
 ```
 
 #API
-{{>specific-module-children name="file-set"}}
+{{#module name="file-set"}}{{>exported}}{{/module}}
+
 *documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
