@@ -46,13 +46,17 @@ Expands file patterns, returning the matched and unmatched files and directories
 
 **Members**
 
-* [new FileSet(patternList)](#module_file-set)
-* [fileSet.list](#module_file-set#list)
-* [fileSet.files](#module_file-set#files)
-* [fileSet.dirs](#module_file-set#dirs)
-* [fileSet.notExisting](#module_file-set#notExisting)
-* [fileSet.add(files)](#module_file-set#add)
-* [enum: FileSet.eFileType](#module_file-set.eFileType)
+* [class: FileSet ⏏](#module_file-set)
+  * [new FileSet(patternList)](#module_file-set)
+  * [fileSet.list](#module_file-set#list)
+  * [fileSet.files](#module_file-set#files)
+  * [fileSet.dirs](#module_file-set#dirs)
+  * [fileSet.notExisting](#module_file-set#notExisting)
+  * [enum: FileSet.eFileType](#module_file-set.eFileType)
+    * [eFileType.NOEXIST](#module_file-set.eFileType.NOEXIST)
+    * [eFileType.FILE](#module_file-set.eFileType.FILE)
+    * [eFileType.DIR](#module_file-set.eFileType.DIR)
+  * [fileSet.add(files)](#module_file-set#add)
 
 <a name="module_file-set"></a>
 ###new FileSet(patternList)
