@@ -10,7 +10,6 @@
   },
   "author": "Lloyd Brookes",
   "devDependencies": {
-    "jsdoc-to-markdown": "~0.6",
     "tape": "^3.0.3"
   },
   "dependencies": {
