@@ -1,6 +1,6 @@
 {
   "name": "file-set",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Expands file patterns, returning the matched and unmatched files and directories.",
   "main": "lib/file-set.js",
   "repository": "https://github.com/75lb/file-set",
