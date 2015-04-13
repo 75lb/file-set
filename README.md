@@ -56,7 +56,7 @@ var fileSet = require("file-set");
       * [.notExisting](#module_file-set--FileSet#notExisting) : <code>Array.&lt;string&gt;</code>
       * [.add(files)](#module_file-set--FileSet#add)
     * _static_
-      * [.eFileType](#module_file-set--FileSet.eFileType) : <code>number</code>
+      * [.eFileType](#module_file-set--FileSet.eFileType) : <code>enum</code>
 
 <a name="exp_module_file-set--FileSet"></a>
 ### FileSet ⏏
@@ -68,7 +68,7 @@ Expands file patterns, returning the matched and unmatched files and directories
 
 | Param | Type | Description |
 | --- | --- | --- |
-| patternList | <code>string</code> \| <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
+| patternList | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
 
 <a name="module_file-set--FileSet#list"></a>
 #### fileSet.list : <code>Array.&lt;string&gt;</code>
@@ -98,10 +98,10 @@ add file patterns to the set
 
 | Param | Type | Description |
 | --- | --- | --- |
-| files | <code>string</code> \| <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
+| files | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
 
 <a name="module_file-set--FileSet.eFileType"></a>
-#### FileSet.eFileType : <code>number</code>
+#### FileSet.eFileType : <code>enum</code>
 Enum for the `type` value of each record in `fileSet.list`
 
 **Kind**: static enum property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
@@ -115,4 +115,6 @@ Enum for the `type` value of each record in `fileSet.list`
 | DIR | <code>number</code> | <code>2</code> |  |
 
 
-*documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
+* * *
+
+&copy; 2015 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
