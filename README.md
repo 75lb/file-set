@@ -50,11 +50,11 @@ var fileSet = require("file-set");
   * [FileSet](#exp_module_file-set--FileSet) ⏏
     * [new FileSet(patternList)](#new_module_file-set--FileSet_new)
     * _instance_
-      * [.list](#module_file-set--FileSet#list) : <code>Array.&lt;string&gt;</code>
-      * [.files](#module_file-set--FileSet#files) : <code>Array.&lt;string&gt;</code>
-      * [.dirs](#module_file-set--FileSet#dirs) : <code>Array.&lt;string&gt;</code>
-      * [.notExisting](#module_file-set--FileSet#notExisting) : <code>Array.&lt;string&gt;</code>
-      * [.add(files)](#module_file-set--FileSet#add)
+      * [.list](#module_file-set--FileSet+list) : <code>Array.&lt;string&gt;</code>
+      * [.files](#module_file-set--FileSet+files) : <code>Array.&lt;string&gt;</code>
+      * [.dirs](#module_file-set--FileSet+dirs) : <code>Array.&lt;string&gt;</code>
+      * [.notExisting](#module_file-set--FileSet+notExisting) : <code>Array.&lt;string&gt;</code>
+      * [.add(files)](#module_file-set--FileSet+add)
     * _static_
       * [.eFileType](#module_file-set--FileSet.eFileType) : <code>enum</code>
 
@@ -70,27 +70,27 @@ Expands file patterns, returning the matched and unmatched files and directories
 | --- | --- | --- |
 | patternList | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
 
-<a name="module_file-set--FileSet#list"></a>
+<a name="module_file-set--FileSet+list"></a>
 #### fileSet.list : <code>Array.&lt;string&gt;</code>
 The full list of unique paths found, and not found.
 
 **Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
-<a name="module_file-set--FileSet#files"></a>
+<a name="module_file-set--FileSet+files"></a>
 #### fileSet.files : <code>Array.&lt;string&gt;</code>
 The existing files found
 
 **Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
-<a name="module_file-set--FileSet#dirs"></a>
+<a name="module_file-set--FileSet+dirs"></a>
 #### fileSet.dirs : <code>Array.&lt;string&gt;</code>
 The existing directories found
 
 **Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
-<a name="module_file-set--FileSet#notExisting"></a>
+<a name="module_file-set--FileSet+notExisting"></a>
 #### fileSet.notExisting : <code>Array.&lt;string&gt;</code>
 Paths which were not found
 
 **Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
-<a name="module_file-set--FileSet#add"></a>
+<a name="module_file-set--FileSet+add"></a>
 #### fileSet.add(files)
 add file patterns to the set
 
