@@ -3,6 +3,7 @@
   "version": "0.2.7",
   "description": "Expands file patterns, returning the matched and unmatched files and directories.",
   "main": "lib/file-set.js",
+  "license": "MIT",
   "repository": "https://github.com/75lb/file-set",
   "scripts": {
     "test": "tape test/*.js",
@@ -14,7 +15,7 @@
     "tape": "^4"
   },
   "dependencies": {
-    "array-tools": "^1.0.4",
+    "array-tools": "^2",
     "glob": "^4"
   }
 }
