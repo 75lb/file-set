@@ -8,7 +8,7 @@ Exports a contructor taking a list of file patterns as input, returning a `file-
 
 **Example**  
 ```js
-var fileSet = require("file-set");
+var fileSet = require("file-set")
 ```
 
 
@@ -43,20 +43,20 @@ Exports a contructor taking a list of file patterns as input, returning a `file-
 
 **Example**  
 ```js
-var fileSet = require("file-set");
+var fileSet = require("file-set")
 ```
 
 * [file-set](#module_file-set)
-  * [FileSet](#exp_module_file-set--FileSet) ⏏
-    * [new FileSet(patternList)](#new_module_file-set--FileSet_new)
-    * _instance_
-      * [.list](#module_file-set--FileSet+list) : <code>Array.&lt;string&gt;</code>
-      * [.files](#module_file-set--FileSet+files) : <code>Array.&lt;string&gt;</code>
-      * [.dirs](#module_file-set--FileSet+dirs) : <code>Array.&lt;string&gt;</code>
-      * [.notExisting](#module_file-set--FileSet+notExisting) : <code>Array.&lt;string&gt;</code>
-      * [.add(files)](#module_file-set--FileSet+add)
-    * _static_
-      * [.eFileType](#module_file-set--FileSet.eFileType) : <code>enum</code>
+    * [FileSet](#exp_module_file-set--FileSet) ⏏
+        * [new FileSet(patternList)](#new_module_file-set--FileSet_new)
+        * _instance_
+            * [.list](#module_file-set--FileSet+list) : <code>Array.&lt;string&gt;</code>
+            * [.files](#module_file-set--FileSet+files) : <code>Array.&lt;string&gt;</code>
+            * [.dirs](#module_file-set--FileSet+dirs) : <code>Array.&lt;string&gt;</code>
+            * [.notExisting](#module_file-set--FileSet+notExisting) : <code>Array.&lt;string&gt;</code>
+            * [.add(files)](#module_file-set--FileSet+add)
+        * _static_
+            * [.eFileType](#module_file-set--FileSet.eFileType) : <code>enum</code>
 
 <a name="exp_module_file-set--FileSet"></a>
 ### FileSet ⏏
