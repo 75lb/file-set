@@ -1,6 +1,6 @@
 {
   "name": "file-set",
-  "version": "0.2.8",
+  "version": "1.0.0",
   "description": "Expands file patterns, returning the matched and unmatched files and directories.",
   "main": "lib/file-set.js",
   "license": "MIT",
