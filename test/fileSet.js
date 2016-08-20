@@ -1,31 +1,29 @@
 'use strict'
-var test = require('tape')
+var test = require('test-runner')
 var FileSet = require('../')
+var a = require('core-assert')
 
-test('fileSet.notExisting', function (t) {
+test('fileSet.notExisting', function () {
   var fileSet = new FileSet([ 'test/fixture/*', 'clive', 'test/fixture/folder2/**' ])
 
-  t.deepEqual(fileSet.notExisting, [ 'clive' ])
-  t.end()
+  a.deepEqual(fileSet.notExisting, [ 'clive' ])
 })
 
-test('fileSet.files', function (t) {
+test('fileSet.files', function () {
   var fileSet = new FileSet([ 'test/fixture/*', 'clive', 'test/fixture/folder2/**' ])
 
-  t.deepEqual(fileSet.files, [
+  a.deepEqual(fileSet.files, [
     'test/fixture/file1',
     'test/fixture/folder2/file3',
     'test/fixture/folder2/folder3/file4'
   ])
-  t.end()
 })
 
-test('fileSet.dirs', function (t) {
+test('fileSet.dirs', function () {
   var fileSet = new FileSet([ 'test/fixture/*', 'clive', 'test/fixture/folder2/**' ])
-  t.deepEqual(fileSet.dirs, [
+  a.deepEqual(fileSet.dirs, [
     'test/fixture/folder1/',
     'test/fixture/folder2/',
     'test/fixture/folder2/folder3/'
   ])
-  t.end()
 })
