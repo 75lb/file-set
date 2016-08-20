@@ -9,7 +9,7 @@ Exports a contructor taking a list of file patterns as input, returning a `file-
 
 **Example**  
 ```js
-var fileSet = require('file-set')
+const FileSet = require('file-set')
 ```
 
 
@@ -20,9 +20,9 @@ $ npm install file-set --save
 
 ## Usage
 ```js
-> var fileSet = require('file-set');
+> const FileSet = require('file-set');
 
-> fileSet([ '*', 'not/existing/*' ])
+> new FileSet([ '*', 'not/existing/*' ])
 FileSet {
   files: [ 'LICENSE', 'package.json', 'README.md' ],
   dirs: [ 'jsdoc2md/', 'lib/', 'node_modules/', 'test/' ],
@@ -34,7 +34,7 @@ Exports a contructor taking a list of file patterns as input, returning a `file-
 
 **Example**  
 ```js
-var fileSet = require('file-set')
+const FileSet = require('file-set')
 ```
 
 * [file-set](#module_file-set)
