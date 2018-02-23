@@ -1,6 +1,6 @@
 {
   "name": "file-set",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Expands file patterns, returning the matched and unmatched files and directories.",
   "license": "MIT",
   "repository": "https://github.com/75lb/file-set",
