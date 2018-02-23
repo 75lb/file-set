@@ -57,38 +57,38 @@ Expands file patterns, returning the matched and unmatched files and directories
 
 | Param | Type | Description |
 | --- | --- | --- |
-| patternList | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
+| patternList | <code>string</code> \| <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
 
 <a name="module_file-set--FileSet+files"></a>
 
 #### fileSet.files : <code>Array.&lt;string&gt;</code>
 The existing files found
 
-**Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
+**Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 <a name="module_file-set--FileSet+dirs"></a>
 
 #### fileSet.dirs : <code>Array.&lt;string&gt;</code>
 The existing directories found
 
-**Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
+**Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 <a name="module_file-set--FileSet+notExisting"></a>
 
 #### fileSet.notExisting : <code>Array.&lt;string&gt;</code>
 Paths which were not found
 
-**Kind**: instance property of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
+**Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 <a name="module_file-set--FileSet+add"></a>
 
 #### fileSet.add(files)
 add file patterns to the set
 
-**Kind**: instance method of <code>[FileSet](#exp_module_file-set--FileSet)</code>  
+**Kind**: instance method of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| files | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
+| files | <code>string</code> \| <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
 
 
 * * *
 
-&copy; 2014-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+&copy; 2014-18 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

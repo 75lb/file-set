@@ -1,6 +1,6 @@
 'use strict'
-var glob = require('glob')
-var arrayify = require('array-back')
+const glob = require('glob')
+const arrayify = require('array-back')
 
 /**
  * Exports a contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
@@ -16,12 +16,12 @@ module.exports = FileSet
 /* Polyfill for old node versions */
 if (!String.prototype.endsWith) {
   String.prototype.endsWith = function (searchString, position) {
-    var subjectString = this.toString()
+    const subjectString = this.toString()
     if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) {
       position = subjectString.length
     }
     position -= searchString.length
-    var lastIndex = subjectString.indexOf(searchString, position)
+    const lastIndex = subjectString.indexOf(searchString, position)
     return lastIndex !== -1 && lastIndex === position
   }
 }
@@ -61,13 +61,13 @@ function FileSet (patternList) {
  * @param files {string|string[]} - A pattern, or array of patterns to expand
  */
 FileSet.prototype.add = function (files) {
-  var self = this
-  var fs = require('fs')
+  const self = this
+  const fs = require('fs')
 
   files = arrayify(files)
   files.forEach(function (file) {
     try {
-      var stat = fs.statSync(file)
+      const stat = fs.statSync(file)
       if (stat.isFile()) {
         if (self.files.indexOf(file) === -1) self.files.push(file)
       } else if (stat.isDirectory()) {
@@ -75,7 +75,7 @@ FileSet.prototype.add = function (files) {
       }
     } catch (err) {
       if (err.code === 'ENOENT') {
-        var found = glob.sync(file, { mark: true })
+        const found = glob.sync(file, { mark: true })
         if (found.length) {
           found.forEach(function (match) {
             if (match.endsWith('/')) {
