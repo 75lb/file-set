@@ -4,6 +4,9 @@
   "description": "Expands file patterns, returning the matched and unmatched files and directories.",
   "license": "MIT",
   "repository": "https://github.com/75lb/file-set",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "test-runner test/*.js",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/file-set.js > README.md; echo "
@@ -15,6 +18,6 @@
   },
   "dependencies": {
     "array-back": "^2.0.0",
-    "glob": "^7.1.2"
+    "glob": "^7.1.3"
   }
 }
