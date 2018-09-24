@@ -5,6 +5,9 @@
   "main": "lib/file-set.js",
   "license": "MIT",
   "repository": "https://github.com/75lb/file-set",
+  "files": [
+    "lib/file-set.js"
+  ],
   "scripts": {
     "test": "test-runner test/*.js",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/file-set.js > README.md; echo "
