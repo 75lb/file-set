@@ -1,16 +1,16 @@
-'use strict'
-const TestRunner = require('test-runner')
+const Tom = require('test-runner').Tom
 const FileSet = require('../')
-const a = require('assert')
-const runner = new TestRunner()
+const a = require('assert').strict
 
-runner.test('fileSet.notExisting', function () {
+const tom = module.exports = new Tom('')
+
+tom.test('fileSet.notExisting', function () {
   const fileSet = new FileSet([ 'test/fixture/*', 'clive', 'test/fixture/folder2/**', 'test/fixture/[#f1ipping4nn0y1ing].dir.NAME--3[$2$$!]' ])
 
   a.deepEqual(fileSet.notExisting, [ 'clive' ])
 })
 
-runner.test('fileSet.files', function () {
+tom.test('fileSet.files', function () {
   const fileSet = new FileSet([ 'test/fixture/*', 'clive', 'test/fixture/folder2/**' ])
 
   a.deepEqual(fileSet.files, [
@@ -21,7 +21,7 @@ runner.test('fileSet.files', function () {
   ])
 })
 
-runner.test('fileSet.dirs', function () {
+tom.test('fileSet.dirs', function () {
   const fileSet = new FileSet([ 'test/fixture/*', 'clive', 'test/fixture/folder2/**' ])
   a.deepEqual(fileSet.dirs, [
     'test/fixture/[#f1ipping4nn0y1ing].dir.NAME--3[$2$$!]/',
@@ -31,7 +31,7 @@ runner.test('fileSet.dirs', function () {
   ])
 })
 
-runner.test('special chars in filename', function () {
+tom.test('special chars in filename', function () {
   const fileSet = new FileSet([ 'test/fixture/[#f1ipping4nn0y1ing].file.NAME--3[$2$$!].mkv' ])
   a.deepEqual(fileSet.files, [
     'test/fixture/[#f1ipping4nn0y1ing].file.NAME--3[$2$$!].mkv'
