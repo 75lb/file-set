@@ -1,11 +1,12 @@
 [![view on npm](http://img.shields.io/npm/v/file-set.svg)](https://www.npmjs.org/package/file-set)
 [![npm module downloads](http://img.shields.io/npm/dt/file-set.svg)](https://www.npmjs.org/package/file-set)
 [![Build Status](https://travis-ci.org/75lb/file-set.svg?branch=master)](https://travis-ci.org/75lb/file-set)
-[![Dependency Status](https://david-dm.org/75lb/file-set.svg)](https://david-dm.org/75lb/file-set)
+[![Dependency Status](https://badgen.net/david/dep/75lb/file-set)](https://david-dm.org/75lb/file-set)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # file-set
-Exports a contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
+
+Breaks an input list of file paths and glob expressions into three categories: files, directories and not existing.
 
 **Example**  
 ```js
@@ -14,11 +15,13 @@ const FileSet = require('file-set')
 
 
 ## Install
+
 ```sh
-$ npm install file-set --save
+$ npm install file-set
 ```
 
 ## Usage
+
 ```js
 > const FileSet = require('file-set');
 
@@ -30,7 +33,8 @@ FileSet {
 ```
 
 # API
-Exports a contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
+
+Breaks an input list of file paths and glob expressions into three categories: files, directories and not existing.
 
 **Example**  
 ```js
@@ -48,8 +52,6 @@ const FileSet = require('file-set')
 <a name="exp_module_file-set--FileSet"></a>
 
 ### FileSet ⏏
-Expands file patterns, returning the matched and unmatched files and directories.
-
 **Kind**: Exported class  
 <a name="new_module_file-set--FileSet_new"></a>
 
@@ -57,7 +59,7 @@ Expands file patterns, returning the matched and unmatched files and directories
 
 | Param | Type | Description |
 | --- | --- | --- |
-| patternList | <code>string</code> \| <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand. |
+| patternList | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more file paths or glob expressions to inspect. |
 
 <a name="module_file-set--FileSet+files"></a>
 
@@ -80,13 +82,13 @@ Paths which were not found
 <a name="module_file-set--FileSet+add"></a>
 
 #### fileSet.add(files)
-add file patterns to the set
+Add file patterns to the set.
 
 **Kind**: instance method of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| files | <code>string</code> \| <code>Array.&lt;string&gt;</code> | A pattern, or array of patterns to expand |
+| files | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more file paths or glob expressions to inspect. |
 
 
 * * *

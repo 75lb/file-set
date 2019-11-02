@@ -1,5 +1,5 @@
 /**
- * Exports a contructor taking a list of file patterns as input, returning a `file-set` instance containing the expanded patterns split into separate lists of `files`, `dirs` and `notExisting`.
+ * Breaks an input list of file paths and glob expressions into three categories: files, directories and not existing.
  * @module file-set
  * @example
  * ```js
@@ -11,8 +11,7 @@ const glob = require('glob')
 const arrayify = require('array-back')
 
 /**
- * Expands file patterns, returning the matched and unmatched files and directories.
- * @param {string | string[]} - A pattern, or array of patterns to expand.
+ * @param {string | string[]} - One or more file paths or glob expressions to inspect.
  * @alias module:file-set
  */
 class FileSet {
@@ -39,8 +38,8 @@ class FileSet {
   }
 
   /**
-   * add file patterns to the set
-   * @param files {string|string[]} - A pattern, or array of patterns to expand
+   * Add file patterns to the set.
+   * @param files {string|string[]} - One or more file paths or glob expressions to inspect.
    */
   add (files) {
     const fs = require('fs')
