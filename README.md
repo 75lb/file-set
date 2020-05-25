@@ -1,7 +1,8 @@
-[![view on npm](http://img.shields.io/npm/v/file-set.svg)](https://www.npmjs.org/package/file-set)
-[![npm module downloads](http://img.shields.io/npm/dt/file-set.svg)](https://www.npmjs.org/package/file-set)
+[![view on npm](https://badgen.net/npm/v/file-set)](https://www.npmjs.org/package/file-set)
+[![npm module downloads](https://badgen.net/npm/dt/file-set)](https://www.npmjs.org/package/file-set)
 [![Build Status](https://travis-ci.org/75lb/file-set.svg?branch=master)](https://travis-ci.org/75lb/file-set)
 [![Dependency Status](https://badgen.net/david/dep/75lb/file-set)](https://david-dm.org/75lb/file-set)
+[![Coverage Status](https://coveralls.io/repos/github/75lb/file-set/badge.svg)](https://coveralls.io/github/75lb/file-set)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # file-set
@@ -93,4 +94,4 @@ Add file patterns to the set.
 
 * * *
 
-&copy; 2014-19 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+&copy; 2014-20 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
