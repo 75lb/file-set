@@ -10,7 +10,7 @@ Expands a list of paths and glob expressions into three sets: "files", "director
 
 ## Usage
 
-Expand two glob expressions ('\*' and 'not/existing/\*').
+Expand two glob expressions (`'*'` and `'not/existing/*'`).
 
 ```js
 const FileSet = require('file-set')
