@@ -1,10 +1,5 @@
 /**
- * Breaks an input list of file paths and glob expressions into three categories: files, directories and not existing.
  * @module file-set
- * @example
- * ```js
- * const FileSet = require('file-set')
- * ```
  */
 
 const glob = require('glob')

@@ -2,38 +2,35 @@
 [![npm module downloads](https://badgen.net/npm/dt/file-set)](https://www.npmjs.org/package/file-set)
 [![Build Status](https://travis-ci.org/75lb/file-set.svg?branch=master)](https://travis-ci.org/75lb/file-set)
 [![Dependency Status](https://badgen.net/david/dep/75lb/file-set)](https://david-dm.org/75lb/file-set)
-[![Coverage Status](https://coveralls.io/repos/github/75lb/file-set/badge.svg)](https://coveralls.io/github/75lb/file-set)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # file-set
 
-{{#module name="file-set"}}{{>body}}{{/module}}
-
-## Install
-
-```sh
-$ npm install file-set
-```
+Expands a list of paths and glob expressions into three sets: "files", "directories" and "not existing". Each set in the output is a list of unique paths.
 
 ## Usage
 
-```js
-> const FileSet = require('file-set');
+Expand two glob expressions ('\*' and 'not/existing/\*').
 
-> new FileSet([ '*', 'not/existing/*' ])
+```js
+const FileSet = require('file-set')
+const fileSet = new FileSet([ '*', 'not/existing/*' ])
+console.log(fileSet)
+```
+
+The output has been organised into sets.
+
+```
 FileSet {
   files: [ 'LICENSE', 'package.json', 'README.md' ],
   dirs: [ 'jsdoc2md/', 'lib/', 'node_modules/', 'test/' ],
-  notExisting: [ 'not/existing/*' ] }
+  notExisting: [ 'not/existing/*' ]
+}
 ```
 
 # API
 
-{{#module name='file-set'~}}
-{{>body~}}
-{{>member-index~}}
-{{>members~}}
-{{/module}}
+{{>main}}
 
 * * *
 
