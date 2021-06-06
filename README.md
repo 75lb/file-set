@@ -14,8 +14,9 @@ Expands a list of paths and glob expressions into three sets: "files", "director
 Expand two glob expressions (`'*'` and `'not/existing/*'`).
 
 ```js
-const FileSet = require('file-set')
-const fileSet = new FileSet([ '*', 'not/existing/*' ])
+import FileSet from 'file-set'
+const fileSet = new FileSet()
+await fileSet.add([ '*', 'not/existing/*' ])
 console.log(fileSet)
 ```
 
@@ -37,7 +38,7 @@ FileSet {
 
 * [file-set](#module_file-set)
     * [FileSet](#exp_module_file-set--FileSet) ⏏
-        * [new FileSet(patternList)](#new_module_file-set--FileSet_new)
+        * [new FileSet()](#new_module_file-set--FileSet_new)
         * [.files](#module_file-set--FileSet+files) : <code>Array.&lt;string&gt;</code>
         * [.dirs](#module_file-set--FileSet+dirs) : <code>Array.&lt;string&gt;</code>
         * [.notExisting](#module_file-set--FileSet+notExisting) : <code>Array.&lt;string&gt;</code>
@@ -49,11 +50,7 @@ FileSet {
 **Kind**: Exported class  
 <a name="new_module_file-set--FileSet_new"></a>
 
-#### new FileSet(patternList)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| patternList | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more file paths or glob expressions to inspect. |
+#### new FileSet()
 
 <a name="module_file-set--FileSet+files"></a>
 
@@ -64,7 +61,7 @@ The existing files found
 <a name="module_file-set--FileSet+dirs"></a>
 
 #### fileSet.dirs : <code>Array.&lt;string&gt;</code>
-The existing directories found
+The existing directories found. Directory paths will always end with `'/'`.
 
 **Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 <a name="module_file-set--FileSet+notExisting"></a>
@@ -75,18 +72,18 @@ Paths which were not found
 **Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 <a name="module_file-set--FileSet+add"></a>
 
-#### fileSet.add(files)
+#### fileSet.add(patterns)
 Add file patterns to the set.
 
 **Kind**: instance method of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| files | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more file paths or glob expressions to inspect. |
+| patterns | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more file paths or glob expressions to inspect. |
 
 
 * * *
 
 &copy; 2014-21 Lloyd Brookes \<75pound@gmail.com\>.
 
-Tested by [test-runner](https://github.com/test-runner-js/test-runner). Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+Tested by [test-runner](https://github.com/test-runner-js/test-runner).
