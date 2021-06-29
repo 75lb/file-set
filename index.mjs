@@ -4,6 +4,11 @@ import * as fs from 'fs/promises'
 
 class FileSet {
   constructor () {
+    /* validation */
+    if (arguments.length) {
+      throw new Error('new Fileset() does not require any arguments')
+    }
+
     /** • fileSet.files :string[]
     ≈ The existing files found.
     */

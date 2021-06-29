@@ -73,4 +73,11 @@ tom.test('No globs, one missing', async function () {
   ])
 })
 
+tom.test('validation', async function () {
+  a.throws(
+    () => new FileSet('test/test.mjs'),
+    /does not require any arguments/
+  )
+})
+
 export default tom
