@@ -10,7 +10,8 @@
     "require": "./dist/index.cjs"
   },
   "files": [
-    "index.mjs"
+    "index.mjs",
+    "dist"
   ],
   "engines": {
     "node": ">=12.17"
