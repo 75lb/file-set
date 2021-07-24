@@ -1,6 +1,6 @@
 {
   "name": "file-set",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "author": "Lloyd Brookes",
   "description": "Expands file paths and glob expressions, returning matched and unmatched files and directories",
   "license": "MIT",
