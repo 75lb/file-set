@@ -1,6 +1,7 @@
 import glob from 'glob'
 import arrayify from 'array-back'
-import * as fs from 'fs/promises'
+import * as origFs from 'fs'
+const fs = origFs.promises
 
 class FileSet {
   constructor () {
