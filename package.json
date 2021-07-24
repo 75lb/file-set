@@ -22,6 +22,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.1",
     "@rollup/plugin-node-resolve": "^13.0.2",
+    "rollup": "^2.53.3",
     "test-runner": "^0.8.14"
   },
   "dependencies": {
