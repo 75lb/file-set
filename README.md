@@ -2,12 +2,14 @@
 [![npm module downloads](https://badgen.net/npm/dt/file-set)](https://www.npmjs.org/package/file-set)
 [![Gihub repo dependents](https://badgen.net/github/dependents-repo/75lb/file-set)](https://github.com/75lb/file-set/network/dependents?dependent_type=REPOSITORY)
 [![Gihub package dependents](https://badgen.net/github/dependents-pkg/75lb/file-set)](https://github.com/75lb/file-set/network/dependents?dependent_type=PACKAGE)
-[![Build Status](https://travis-ci.org/75lb/file-set.svg?branch=master)](https://travis-ci.org/75lb/file-set)
+[![Node.js CI](https://github.com/75lb/file-set/actions/workflows/node.js.yml/badge.svg)](https://github.com/75lb/file-set/actions/workflows/node.js.yml)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # file-set
 
 Expands a list of paths and glob expressions into three sets: "files", "directories" and "not existing". Each set in the output is a list of unique paths.
+
+The library saves you the job of learning a globbing library, expanding a glob expression (e.g. `lib/**/*`), sifting through each result testing whether it's a file, directory or neither.
 
 ## Usage
 
