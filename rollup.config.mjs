@@ -1,6 +1,3 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import commonJs from '@rollup/plugin-commonjs'
-
 export default [
   {
     input: 'index.mjs',
@@ -9,7 +6,6 @@ export default [
       format: 'cjs',
       exports: 'auto'
     },
-    external: [],
-    plugins: [nodeResolve({ preferBuiltins: true }), commonJs()]
+    external: []
   }
 ]
