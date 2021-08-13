@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "rollup": "^2.56.2",
-    "test-runner": "^0.9.7"
+    "test-runner": "^0.9.8"
   },
   "dependencies": {
     "array-back": "^6.2.0",
