@@ -22,11 +22,11 @@
     "dist": "rollup -c"
   },
   "devDependencies": {
-    "rollup": "^2.56.2",
-    "test-runner": "^0.9.8"
+    "rollup": "^2.64.0",
+    "test-runner": "^0.10.1"
   },
   "dependencies": {
-    "array-back": "^6.2.0",
-    "glob": "^7.1.7"
+    "array-back": "^6.2.2",
+    "glob": "^7.2.0"
   }
 }

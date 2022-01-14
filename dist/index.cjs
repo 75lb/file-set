@@ -15,14 +15,12 @@ function _interopNamespace(e) {
         var d = Object.getOwnPropertyDescriptor(e, k);
         Object.defineProperty(n, k, d.get ? d : {
           enumerable: true,
-          get: function () {
-            return e[k];
-          }
+          get: function () { return e[k]; }
         });
       }
     });
   }
-  n['default'] = e;
+  n["default"] = e;
   return Object.freeze(n);
 }
 
@@ -60,7 +58,7 @@ class FileSet {
   • [patterns] :string|string[] - One or more file paths or glob expressions to inspect.
   */
   async add (files) {
-    files = arrayify__default['default'](files);
+    files = arrayify__default["default"](files);
     for (const file of files) {
       try {
         const stat = await fs.stat(file);
@@ -71,7 +69,7 @@ class FileSet {
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
-          if (glob__default['default'].hasMagic(file)) {
+          if (glob__default["default"].hasMagic(file)) {
             const found = await doGlob(file);
             if (found.length) {
               for (const match of found) {
@@ -103,7 +101,7 @@ class FileSet {
 
 async function doGlob (pattern) {
   return new Promise((resolve, reject) => {
-    glob__default['default'](pattern, { mark: true }, (err, matches) => {
+    glob__default["default"](pattern, { mark: true }, (err, matches) => {
       if (err) {
         reject(err);
       } else {

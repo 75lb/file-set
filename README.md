@@ -86,6 +86,6 @@ Add file patterns to the set.
 
 * * *
 
-&copy; 2014-21 Lloyd Brookes \<75pound@gmail.com\>.
+&copy; 2014-22 Lloyd Brookes \<75pound@gmail.com\>.
 
 Tested by [test-runner](https://github.com/test-runner-js/test-runner).
