@@ -1,7 +1,6 @@
-import glob from 'glob'
+import { glob } from 'glob'
 import arrayify from 'array-back'
-import * as origFs from 'fs'
-const fs = origFs.promises
+import { promises as fs } from 'node:fs'
 
 class FileSet {
   constructor () {
@@ -43,7 +42,7 @@ class FileSet {
       } catch (err) {
         if (err.code === 'ENOENT') {
           if (glob.hasMagic(file)) {
-            const found = await doGlob(file)
+            const found = await glob(file, { mark: true })
             if (found.length) {
               for (const match of found) {
                 if (match.endsWith('/')) {
@@ -70,18 +69,6 @@ class FileSet {
     this.dirs = []
     this.notExisting = []
   }
-}
-
-async function doGlob (pattern) {
-  return new Promise((resolve, reject) => {
-    glob(pattern, { mark: true }, (err, matches) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(matches)
-      }
-    })
-  })
 }
 
 export default FileSet
