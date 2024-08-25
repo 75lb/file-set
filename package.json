@@ -1,6 +1,6 @@
 {
   "name": "file-set",
-  "version": "5.1.3",
+  "version": "6.0.0",
   "author": "Lloyd Brookes",
   "description": "Expands file paths and glob expressions, returning matched and unmatched files and directories",
   "license": "MIT",
@@ -31,9 +31,9 @@
   "peerDependenciesMeta": {
     "@75lb/nature": {
       "optional": true
-   }
+    }
   },
- "devDependencies": {},
+  "devDependencies": {},
   "dependencies": {
     "array-back": "^6.2.2",
     "glob": "^11.0.0"
