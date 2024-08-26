@@ -1,6 +1,8 @@
 import { glob } from 'glob'
 import arrayify from 'array-back'
 import { promises as fs } from 'node:fs'
+import path from 'node:path'
+import os from 'node:os'
 
 class FileSet {
   constructor () {
@@ -37,15 +39,18 @@ class FileSet {
         if (stat.isFile() && !this.files.includes(file)) {
           this.files.push(file)
         } else if (stat.isDirectory() && !this.dirs.includes(file)) {
-          this.dirs.push(file.endsWith('/') ? file : `${file}/`)
+          this.dirs.push(file.endsWith(path.sep) ? file : `${file}${path.sep}`)
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
-          if (glob.hasMagic(file)) {
-            const found = await glob(file, { mark: true })
+          const posixPath = os.platform() === 'win32'
+            ? file.replaceAll(path.sep, path.posix.sep)
+            : file
+          if (glob.hasMagic(posixPath)) {
+            const found = await glob(posixPath, { mark: true })
             if (found.length) {
               for (const match of found) {
-                if (match.endsWith('/')) {
+                if (match.endsWith(path.sep)) {
                   if (!this.dirs.includes(match)) this.dirs.push(match)
                 } else {
                   if (!this.files.includes(match)) this.files.push(match)

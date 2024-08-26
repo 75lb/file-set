@@ -1,13 +1,14 @@
 'use strict';
 
 var node_url = require('node:url');
-var node_path = require('node:path');
+var path$1 = require('node:path');
 var fs = require('fs');
 var actualFS = require('node:fs');
 var promises = require('node:fs/promises');
 var node_events = require('node:events');
 var Stream = require('node:stream');
 var node_string_decoder = require('node:string_decoder');
+var os = require('node:os');
 
 function _interopNamespaceDefault(e) {
 	var n = Object.create(null);
@@ -5799,7 +5800,7 @@ class PathWin32 extends PathBase {
      * @internal
      */
     getRootString(path) {
-        return node_path.win32.parse(path).root;
+        return path$1.win32.parse(path).root;
     }
     /**
      * @internal
@@ -6507,7 +6508,7 @@ class PathScurryWin32 extends PathScurryBase {
     sep = '\\';
     constructor(cwd = process.cwd(), opts = {}) {
         const { nocase = true } = opts;
-        super(cwd, node_path.win32, '\\', { ...opts, nocase });
+        super(cwd, path$1.win32, '\\', { ...opts, nocase });
         this.nocase = nocase;
         for (let p = this.cwd; p; p = p.parent) {
             p.nocase = this.nocase;
@@ -6520,7 +6521,7 @@ class PathScurryWin32 extends PathScurryBase {
         // if the path starts with a single separator, it's not a UNC, and we'll
         // just get separator as the root, and driveFromUNC will return \
         // In that case, mount \ on the root from the cwd.
-        return node_path.win32.parse(dir).root.toUpperCase();
+        return path$1.win32.parse(dir).root.toUpperCase();
     }
     /**
      * @internal
@@ -6549,7 +6550,7 @@ class PathScurryPosix extends PathScurryBase {
     sep = '/';
     constructor(cwd = process.cwd(), opts = {}) {
         const { nocase = false } = opts;
-        super(cwd, node_path.posix, '/', { ...opts, nocase });
+        super(cwd, path$1.posix, '/', { ...opts, nocase });
         this.nocase = nocase;
     }
     /**
@@ -7999,15 +8000,18 @@ class FileSet {
         if (stat.isFile() && !this.files.includes(file)) {
           this.files.push(file);
         } else if (stat.isDirectory() && !this.dirs.includes(file)) {
-          this.dirs.push(file.endsWith('/') ? file : `${file}/`);
+          this.dirs.push(file.endsWith(path$1.sep) ? file : `${file}${path$1.sep}`);
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
-          if (glob.hasMagic(file)) {
-            const found = await glob(file, { mark: true });
+          const posixPath = os.platform() === 'win32'
+            ? file.replaceAll(path$1.sep, path$1.posix.sep)
+            : file;
+          if (glob.hasMagic(posixPath)) {
+            const found = await glob(posixPath, { mark: true });
             if (found.length) {
               for (const match of found) {
-                if (match.endsWith('/')) {
+                if (match.endsWith(path$1.sep)) {
                   if (!this.dirs.includes(match)) this.dirs.push(match);
                 } else {
                   if (!this.files.includes(match)) this.files.push(match);
