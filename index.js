@@ -1,7 +1,8 @@
-import glob from 'glob'
+import fg from 'fast-glob'
 import arrayify from 'array-back'
-import * as origFs from 'fs'
-const fs = origFs.promises
+import { promises as fs } from 'node:fs'
+import path from 'node:path'
+import os from 'node:os'
 
 class FileSet {
   constructor () {
@@ -32,21 +33,24 @@ class FileSet {
   */
   async add (files) {
     files = arrayify(files)
-    for (const file of files) {
+    for (let file of files) {
+      file = os.platform() === 'win32'
+        ? file.replaceAll(path.win32.sep, path.posix.sep)
+        : file
       try {
         const stat = await fs.stat(file)
         if (stat.isFile() && !this.files.includes(file)) {
           this.files.push(file)
         } else if (stat.isDirectory() && !this.dirs.includes(file)) {
-          this.dirs.push(file.endsWith('/') ? file : `${file}/`)
+          this.dirs.push(file.endsWith(path.sep) ? file : `${file}${path.sep}`)
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
-          if (glob.hasMagic(file)) {
-            const found = await doGlob(file)
+          if (fg.isDynamicPattern(file)) {
+            const found = await fg.glob(file, { onlyFiles: false, markDirectories: true })
             if (found.length) {
               for (const match of found) {
-                if (match.endsWith('/')) {
+                if (match.endsWith(path.posix.sep)) {
                   if (!this.dirs.includes(match)) this.dirs.push(match)
                 } else {
                   if (!this.files.includes(match)) this.files.push(match)
@@ -70,18 +74,6 @@ class FileSet {
     this.dirs = []
     this.notExisting = []
   }
-}
-
-async function doGlob (pattern) {
-  return new Promise((resolve, reject) => {
-    glob(pattern, { mark: true }, (err, matches) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(matches)
-      }
-    })
-  })
 }
 
 export default FileSet

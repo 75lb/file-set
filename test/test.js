@@ -1,17 +1,16 @@
-import TestRunner from 'test-runner'
-import assert from 'assert'
+import { strict as a } from 'assert'
 import FileSet from 'file-set'
-const a = assert.strict
+import os from 'node:os'
 
-const tom = new TestRunner.Tom()
+const [test, only, skip] = [new Map(), new Map(), new Map()]
 
-tom.test('fileSet.notExisting', async function () {
+test.set('fileSet.notExisting', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/*', 'clive', 'test/fixture/folder2/**', 'test/fixture/[#f1ipping4nn0y1ing].dir.NAME--3[$2$$!]'])
   a.deepEqual(fileSet.notExisting, ['clive'])
 })
 
-tom.test('fileSet.files', async function () {
+test.set('fileSet.files', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/*', 'clive', 'test/fixture/folder2/**'])
 
@@ -21,20 +20,16 @@ tom.test('fileSet.files', async function () {
     'test/fixture/folder2/file3',
     'test/fixture/folder2/folder3/file4'
   ])
-})
-
-tom.test('fileSet.dirs', async function () {
-  const fileSet = new FileSet()
-  await fileSet.add(['test/fixture/*', 'clive', 'test/fixture/folder2/**'])
   a.deepEqual(fileSet.dirs, [
     'test/fixture/[#f1ipping4nn0y1ing].dir.NAME--3[$2$$!]/',
     'test/fixture/folder1/',
     'test/fixture/folder2/',
     'test/fixture/folder2/folder3/'
   ])
+  a.deepEqual(fileSet.notExisting, ['clive'])
 })
 
-tom.test('special chars in filename', async function () {
+test.set('special chars in filename', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/[#f1ipping4nn0y1ing].file.NAME--3[$2$$!].mkv'])
   a.deepEqual(fileSet.files, [
@@ -42,7 +37,7 @@ tom.test('special chars in filename', async function () {
   ])
 })
 
-tom.test('fileSet.files: no duplicates', async function () {
+test.set('fileSet.files: no duplicates', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/folder3/*', 'test/fixture/folder2/*/*'])
 
@@ -51,7 +46,7 @@ tom.test('fileSet.files: no duplicates', async function () {
   ])
 })
 
-tom.test('fileSet.dirs: no duplicates', async function () {
+test.set('fileSet.dirs: no duplicates', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/*/*/*', 'test/fixture/folder2/*'])
   a.deepEqual(fileSet.dirs, [
@@ -59,7 +54,7 @@ tom.test('fileSet.dirs: no duplicates', async function () {
   ])
 })
 
-tom.test('No globs, one missing', async function () {
+test.set('No globs, one missing', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/folder1', 'test/fixture/folder1/file2', 'adasd'])
   a.deepEqual(fileSet.dirs, [
@@ -73,11 +68,12 @@ tom.test('No globs, one missing', async function () {
   ])
 })
 
-tom.test('validation', async function () {
+test.set('validation', async function () {
   a.throws(
     () => new FileSet('test/test.mjs'),
     /does not require any arguments/
   )
 })
 
-export default tom
+
+export { test, only, skip }

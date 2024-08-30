@@ -1,10 +1,10 @@
-const TestRunner = require('test-runner')
+const os = require('node:os')
 const a = require('assert').strict
 const FileSet = require('file-set')
 
-const tom = new TestRunner.Tom()
+const [test, only, skip] = [new Map(), new Map(), new Map()]
 
-tom.test('Check it works correctly from CommonJS', async function () {
+test.set('Check it works correctly from CommonJS', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/*', 'clive', 'test/fixture/folder2/**'])
 
@@ -16,4 +16,4 @@ tom.test('Check it works correctly from CommonJS', async function () {
   ])
 })
 
-module.exports = tom
+module.exports = { test, only, skip }
