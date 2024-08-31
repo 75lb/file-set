@@ -34,6 +34,7 @@ class FileSet {
   async add (files) {
     files = arrayify(files)
     for (let file of files) {
+      /* Force all incoming file paths and glob expressions to use posix separators */
       file = os.platform() === 'win32'
         ? file.replace(/\\/g, path.posix.sep)
         : file
@@ -42,7 +43,7 @@ class FileSet {
         if (stat.isFile() && !this.files.includes(file)) {
           this.files.push(file)
         } else if (stat.isDirectory() && !this.dirs.includes(file)) {
-          this.dirs.push(file.endsWith(path.sep) ? file : `${file}${path.sep}`)
+          this.dirs.push(file.endsWith(path.posix.sep) ? file : `${file}${path.posix.sep}`)
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
