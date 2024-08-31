@@ -2,12 +2,13 @@
   "name": "file-set",
   "version": "5.2.1",
   "author": "Lloyd Brookes",
-  "description": "Expands file paths and glob expressions, returning matched and unmatched files and directories",
+  "description": "Cross-platform glob expansions simplified. Input: file paths and glob expressions. Output: resolved file paths organised by type (file, directory and not-found).",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/75lb/file-set.git"
   },
+  "keywords": ["glob", "files", "node-glob", "fast-glob", "globstar"],
   "type": "module",
   "exports": {
     "import": "./index.js",

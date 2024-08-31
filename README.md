@@ -7,82 +7,33 @@
 
 # file-set
 
-Expands a list of paths and glob expressions into three sets: "files", "directories" and "not existing". Each set in the output is a list of unique paths.
+Cross-platform glob expansions simplified. Input: file paths and glob expressions. Output: resolved file paths organised by type (file, directory and not-found). It handles all the cross-platform issues associated with file paths.
 
-The library saves you the job of learning a globbing library, expanding a glob expression (e.g. `lib/**/*`), sifting through each result testing whether it's a file, directory or neither.
 
-## Usage
+Particularly useful for handling user input, for example a CLI utility which accepts a list of file paths and globs.
 
-Expand two glob expressions (`'*'` and `'not/existing/*'`).
+```
+$ example-utility index.js * not/existing/*
+```
+
+The example-utility above could pass its user input into `FileSet`. Call `await .add(<string[]>)` as many times as necessary, adding more path/glob expressions each time.
 
 ```js
 import FileSet from 'file-set'
 const fileSet = new FileSet()
-await fileSet.add([ '*', 'not/existing/*' ])
+await fileSet.add([ 'index.js', '*', 'not/existing/*' ])
 console.log(fileSet)
 ```
 
-The output has been organised into sets.
+The output has been organised into sets. Any duplicates caused by overlapping glob expressions are removed.
 
 ```
 FileSet {
-  files: [ 'LICENSE', 'package.json', 'README.md' ],
+  files: [ 'index.js', 'LICENSE', 'package.json', 'README.md' ],
   dirs: [ 'jsdoc2md/', 'lib/', 'node_modules/', 'test/' ],
   notExisting: [ 'not/existing/*' ]
 }
 ```
-
-# API
-
-<a name="module_file-set"></a>
-
-## file-set
-
-* [file-set](#module_file-set)
-    * [FileSet](#exp_module_file-set--FileSet) ⏏
-        * [new FileSet()](#new_module_file-set--FileSet_new)
-        * [.files](#module_file-set--FileSet+files) : <code>Array.&lt;string&gt;</code>
-        * [.dirs](#module_file-set--FileSet+dirs) : <code>Array.&lt;string&gt;</code>
-        * [.notExisting](#module_file-set--FileSet+notExisting) : <code>Array.&lt;string&gt;</code>
-        * [.add(files)](#module_file-set--FileSet+add)
-
-<a name="exp_module_file-set--FileSet"></a>
-
-### FileSet ⏏
-**Kind**: Exported class  
-<a name="new_module_file-set--FileSet_new"></a>
-
-#### new FileSet()
-
-<a name="module_file-set--FileSet+files"></a>
-
-#### fileSet.files : <code>Array.&lt;string&gt;</code>
-The existing files found
-
-**Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
-<a name="module_file-set--FileSet+dirs"></a>
-
-#### fileSet.dirs : <code>Array.&lt;string&gt;</code>
-The existing directories found. Directory paths will always end with `'/'`.
-
-**Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
-<a name="module_file-set--FileSet+notExisting"></a>
-
-#### fileSet.notExisting : <code>Array.&lt;string&gt;</code>
-Paths which were not found
-
-**Kind**: instance property of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
-<a name="module_file-set--FileSet+add"></a>
-
-#### fileSet.add(patterns)
-Add file patterns to the set.
-
-**Kind**: instance method of [<code>FileSet</code>](#exp_module_file-set--FileSet)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| patterns | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more file paths or glob expressions to inspect. |
-
 
 * * *
 
