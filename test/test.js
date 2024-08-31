@@ -14,13 +14,13 @@ test.set('fileSet.files', async function () {
   const fileSet = new FileSet()
   await fileSet.add(['test/fixture/*', 'clive', 'test/fixture/folder2/**'])
 
-  a.deepEqual(fileSet.files, [
+  a.deepEqual(fileSet.files.sort(), [
     'test/fixture/[#f1ipping4nn0y1ing].file.NAME--3[$2$$!].mkv',
     'test/fixture/file1',
     'test/fixture/folder2/file3',
     'test/fixture/folder2/folder3/file4'
   ])
-  a.deepEqual(fileSet.dirs, [
+  a.deepEqual(fileSet.dirs.sort(), [
     'test/fixture/[#f1ipping4nn0y1ing].dir.NAME--3[$2$$!]/',
     'test/fixture/folder1/',
     'test/fixture/folder2/',
