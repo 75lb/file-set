@@ -1,6 +1,6 @@
 import { strict as a } from 'assert'
 import FileSet from 'file-set'
-import os from 'node:os'
+import os from 'os'
 
 const [test, only, skip] = [new Map(), new Map(), new Map()]
 

@@ -1,4 +1,4 @@
-const os = require('node:os')
+const os = require('os')
 const a = require('assert').strict
 const FileSet = require('file-set')
 

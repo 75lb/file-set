@@ -2,9 +2,9 @@
 
 var fg = require('fast-glob');
 var arrayify = require('array-back');
-var node_fs = require('node:fs');
-var path = require('node:path');
-var os = require('node:os');
+var fs = require('fs');
+var path = require('path');
+var os = require('os');
 
 class FileSet {
   constructor () {
@@ -37,10 +37,10 @@ class FileSet {
     files = arrayify(files);
     for (let file of files) {
       file = os.platform() === 'win32'
-        ? file.replaceAll(path.win32.sep, path.posix.sep)
+        ? file.replace(/\\/g, path.posix.sep)
         : file;
       try {
-        const stat = await node_fs.promises.stat(file);
+        const stat = await fs.promises.stat(file);
         if (stat.isFile() && !this.files.includes(file)) {
           this.files.push(file);
         } else if (stat.isDirectory() && !this.dirs.includes(file)) {

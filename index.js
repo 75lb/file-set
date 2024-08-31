@@ -1,8 +1,8 @@
 import fg from 'fast-glob'
 import arrayify from 'array-back'
-import { promises as fs } from 'node:fs'
-import path from 'node:path'
-import os from 'node:os'
+import { promises as fs } from 'fs'
+import path from 'path'
+import os from 'os'
 
 class FileSet {
   constructor () {
@@ -35,7 +35,7 @@ class FileSet {
     files = arrayify(files)
     for (let file of files) {
       file = os.platform() === 'win32'
-        ? file.replaceAll(path.win32.sep, path.posix.sep)
+        ? file.replace(/\\/g, path.posix.sep)
         : file
       try {
         const stat = await fs.stat(file)
