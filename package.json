@@ -1,6 +1,6 @@
 {
   "name": "file-set",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "author": "Lloyd Brookes",
   "description": "Cross-platform glob expansions simplified. Input: file paths and glob expressions. Output: resolved file paths organised by type (file, directory and not-found).",
   "license": "MIT",
@@ -8,7 +8,13 @@
     "type": "git",
     "url": "git+https://github.com/75lb/file-set.git"
   },
-  "keywords": ["glob", "files", "node-glob", "fast-glob", "globstar"],
+  "keywords": [
+    "glob",
+    "files",
+    "node-glob",
+    "fast-glob",
+    "globstar"
+  ],
   "type": "module",
   "exports": {
     "import": "./index.js",
