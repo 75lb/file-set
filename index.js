@@ -1,4 +1,4 @@
-import tg from 'tinyglobby'
+import { glob, isDynamicPattern } from 'tinyglobby'
 import arrayify from 'array-back'
 import { promises as fs } from 'fs'
 import path from 'path'
@@ -47,8 +47,8 @@ class FileSet {
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
-          if (tg.isDynamicPattern(file)) {
-            const found = await tg.glob(file, { onlyFiles: false, markDirectories: true, expandDirectories: false })
+          if (isDynamicPattern(file)) {
+            const found = await glob(file, { onlyFiles: false, markDirectories: true, expandDirectories: false })
             if (found.length) {
               for (const match of found) {
                 if (match.endsWith(path.posix.sep)) {
