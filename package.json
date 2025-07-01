@@ -41,6 +41,7 @@
     }
   },
   "dependencies": {
+    "abortcontroller-polyfill": "^1.7.8",
     "array-back": "^6.2.2",
     "tinyglobby": "^0.2.14"
   },

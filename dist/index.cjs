@@ -1,10 +1,13 @@
 'use strict';
 
+require('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js');
 var tinyglobby = require('tinyglobby');
 var arrayify = require('array-back');
 var fs = require('fs');
 var path = require('path');
 var os = require('os');
+
+// TODO: drop this polyfill after dropping support for Node 12
 
 class FileSet {
   constructor () {
