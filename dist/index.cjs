@@ -1,10 +1,13 @@
 'use strict';
 
-var fg = require('fast-glob');
+require('abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js');
+var tinyglobby = require('tinyglobby');
 var arrayify = require('array-back');
 var fs = require('fs');
 var path = require('path');
 var os = require('os');
+
+// TODO: drop this polyfill after dropping support for Node 12
 
 class FileSet {
   constructor () {
@@ -49,8 +52,8 @@ class FileSet {
         }
       } catch (err) {
         if (err.code === 'ENOENT') {
-          if (fg.isDynamicPattern(file)) {
-            const found = await fg.glob(file, { onlyFiles: false, markDirectories: true });
+          if (tinyglobby.isDynamicPattern(file)) {
+            const found = await tinyglobby.glob(file, { onlyFiles: false, markDirectories: true, expandDirectories: false });
             if (found.length) {
               for (const match of found) {
                 if (match.endsWith(path.posix.sep)) {

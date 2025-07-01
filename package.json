@@ -12,8 +12,8 @@
     "glob",
     "files",
     "node-glob",
-    "fast-glob",
-    "globstar"
+    "globstar",
+    "tinyglobby"
   ],
   "type": "module",
   "exports": {
@@ -41,8 +41,9 @@
     }
   },
   "dependencies": {
+    "abortcontroller-polyfill": "^1.7.8",
     "array-back": "^6.2.2",
-    "fast-glob": "^3.3.2"
+    "tinyglobby": "^0.2.14"
   },
   "standard": {
     "ignore": [
