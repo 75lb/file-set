@@ -24,7 +24,8 @@ test.set('fileSet.files', async function () {
     'test/fixture/[#f1ipping4nn0y1ing].dir.NAME--3[$2$$!]/',
     'test/fixture/folder1/',
     'test/fixture/folder2/',
-    'test/fixture/folder2/folder3/'
+    'test/fixture/folder2/folder3/',
+    'test/fixture/numeric-sort/'
   ])
   a.deepEqual(fileSet.notExisting, ['clive'])
 })
@@ -75,5 +76,24 @@ test.set('validation', async function () {
   )
 })
 
+test.set('Add an option to sort result of glob expansion', async function () {
+  const collator = new Intl.Collator('en-gb', { numeric: true })
+  const fileSet = new FileSet()
+  await fileSet.add(['test/fixture/numeric-sort/*'], { globResultSortFn: collator.compare })
+
+  a.deepEqual(fileSet.files, [
+    'test/fixture/numeric-sort/1-file.js',
+    'test/fixture/numeric-sort/2-file.js',
+    'test/fixture/numeric-sort/10-file.js',
+    'test/fixture/numeric-sort/20-file.js'
+  ])
+  a.deepEqual(fileSet.dirs, [
+    'test/fixture/numeric-sort/1-folder/',
+    'test/fixture/numeric-sort/2-folder/',
+    'test/fixture/numeric-sort/10-folder/',
+    'test/fixture/numeric-sort/20-folder/'
+  ])
+  a.deepEqual(fileSet.notExisting, [])
+})
 
 export { test, only, skip }

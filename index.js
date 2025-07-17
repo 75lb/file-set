@@ -31,7 +31,7 @@ class FileSet {
   ≈ Add file patterns to the set.
   • [patterns] :string|string[] - One or more file paths or glob expressions to inspect.
   */
-  async add (files) {
+  async add (files, options = {}) {
     files = arrayify(files)
     for (let file of files) {
       /* Force all incoming file paths and glob expressions to use posix separators */
@@ -50,6 +50,9 @@ class FileSet {
           if (fg.isDynamicPattern(file)) {
             const found = await fg.glob(file, { onlyFiles: false, markDirectories: true })
             if (found.length) {
+              if (options.globResultSortFn) {
+                found.sort(options.globResultSortFn)
+              }
               for (const match of found) {
                 if (match.endsWith(path.posix.sep)) {
                   if (!this.dirs.includes(match)) this.dirs.push(match)
